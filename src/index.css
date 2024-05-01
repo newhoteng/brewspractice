@@ -1,13 +1,75 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  color: #3a4a42;
+  /* background: url('images/city-skyline.jpg'); */
+  background-repeat: no-repeat;
+  /* background-color: rgba(224, 222, 222, 0.3); */
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  /* background-color: #273242;
+  opacity: 0.25; 0.62 landing */
+  background: hsla(216, 26%, 21%, 0.25);
+  color: white;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 70px 0 50px;
+  /* box-shadow: 0 5px 5px #e5e5e5; */
+}
+
+nav {
+  /* border: 1px solid blue; */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logo-div {
+  width: 150px;
+  height: 40px;
+  background-color: lightblue;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-main {
+
+}
+
+.landing {
+  border: 2px solid red;
+  height: calc(100vh - 100px);
+  background: url('images/city-skyline.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 50vmax hsla(216, 26%, 21%, 0.62);;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+  padding-top: 86px;
+  color: white;
 }
