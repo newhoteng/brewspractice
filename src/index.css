@@ -22,7 +22,7 @@ body {
 }
 
 .landing {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: calc(100vh - 100px);
   background: url('images/city-skyline.jpg');
   background-repeat: no-repeat;
@@ -36,4 +36,6 @@ body {
   z-index: -1;
   padding: 86px 50px 50px;
   color: white;
+  display: flex;
+  align-items: center;
 }

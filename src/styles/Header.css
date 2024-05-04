@@ -41,7 +41,7 @@ nav {
   justify-content: center;
   font-weight: 900;
   color: goldenrod;
-  border: 1px solid lightblue;
+  /* border: 1px solid lightblue; */
 }
 
 .contact-btn {
@@ -63,8 +63,7 @@ nav {
 /* Mobile Header */
 .mobile-nav {
   /* display: none; */
-  border: 1px solid red;
-  /* display: flex; */
+  /* border: 1px solid red; */
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
@@ -74,14 +73,20 @@ nav {
   background-color: white;
   color: hsla(216, 26%, 21%, 1);
   padding: 25px;
+  box-shadow: 0 5px 5px #e5e5e5;
 }
 
-.navlink {
-  border: 1px solid red;
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inherit;
 }
 
 .menu-cont {
   /* border: 1px solid goldenrod; */
+  /* border-radius: 14px; */
   height: 28px;
   display: flex;
   flex-direction: column;
@@ -97,4 +102,25 @@ nav {
 
 .menubar3 {
   width: 20px;
+}
+
+/* clicked */
+.menubar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.3em, 0.35em);
+  transition: ease-out 0.5s;
+}
+
+.menubar.clicked:nth-child(2) {
+  opacity: 0;
+}
+
+.menubar.clicked:nth-child(3) {
+  transform: rotate(-45deg) translate(0.4em, -0.4em);
+  transition: ease-out 0.5s;
+}
+
+/* unclicked */
+.menubar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }

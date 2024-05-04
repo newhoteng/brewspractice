@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Outlet, NavLink, useLocation } from 'react-router-dom'
 
 const MobileHeader = () => {
+  const [burgerClass, setBurgerClass] = useState('menubar unclicked');
+  const [menuClass, setMenuClass] = useState('mobile-nav hidden');
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  const handleNavClick = () => {
+    setMenuClass('mobile-nav hidden');
+    setBurgerClass('menubar unclicked');
+    setIsMenuClicked(!isMenuClicked);
+  };
+
+  // toggle burger menu change
+  const updateMenu = () => {
+    if (!isMenuClicked) {
+      setBurgerClass('menubar clicked');
+      setMenuClass('mobile-nav visible');
+    } else {
+      setBurgerClass('menubar unclicked');
+      setMenuClass('mobile-nav hidden');
+    }
+    setIsMenuClicked(!isMenuClicked);
+  };
+
   const location = useLocation();
 
   let headerStyle = {
@@ -28,16 +50,16 @@ const MobileHeader = () => {
     <>
       <header style={headerStyle} className='mobile-header'>
         <div className='logo-div'>LOGO</div>
-        <div className='menu-cont'>
-          <div style={menuBarStyle} className='menubar'></div>
-          <div style={menuBarStyle} className='menubar'></div>
-          <div style={menuBarStyle} className='menubar menubar3'></div>
+        <div className='menu-cont' onClick={updateMenu}>
+          <div style={menuBarStyle} className={burgerClass}></div>
+          <div style={menuBarStyle} className={burgerClass}></div>
+          <div style={menuBarStyle} className={burgerClass}></div>
         </div>
-        <nav className='mobile-nav'>
-          <NavLink className='navlink' to="/">HOME</NavLink>
-          <NavLink to="team">OUR TEAM</NavLink>
-          <NavLink to="experience">OUR EXPERIENCE</NavLink>
-          <button className='contact-btn'>Contact Us</button>
+        <nav className={menuClass}>
+          <NavLink to="/" onClick={handleNavClick}>HOME</NavLink>
+          <NavLink to="team" onClick={handleNavClick}>OUR TEAM</NavLink>
+          <NavLink to="experience" onClick={handleNavClick}>OUR EXPERIENCE</NavLink>
+          <button className='contact-btn' onClick={handleNavClick}>Contact Us</button>
         </nav>
       </header>
       <Outlet />
